@@ -1,15 +1,19 @@
 let turn = document.getElementById("turn");
 let boxes = document.querySelectorAll("#main div"), X_or_O = 0;
+let full = document.querySelector("#main");
+console.log(full);
 
 function selectWinnerBoxes(b1, b2, b3){
     b1.classList.add("win");
     b2.classList.add("win");
     b3.classList.add("win"); 
     turn.innerHTML = b1.innerHTML + " Won, Congrats!"
-    turn.classList.add("winnerText");
+    fuller = full.innerHTML = b1.innerHTML;
+    full.classList.add("fully")
 };
 
 function getWinner(){
+    // selecting all of the boxes in the main div
     const box1 = document.getElementById('box1'),
         box2 = document.getElementById('box2'),
         box3 = document.getElementById('box3'),
@@ -43,6 +47,7 @@ function getWinner(){
         selectWinnerBoxes(box3, box5, box7);
     }
 };
+
 
 for(let i=0; i < boxes.length; i++){
     boxes[i].addEventListener("click", switcheroo);
