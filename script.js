@@ -46,6 +46,16 @@ function getWinner(){
         selectWinnerBoxes(box16, box17, box18);
     } 
 
+    // HORIZONTAL WINS
+    // THIRD GAME
+    if (box19.innerHTML !== "" && box19.innerHTML === box20.innerHTML && box19.innerHTML === box21.innerHTML) {
+        selectWinnerBoxes(box19, box20, box21);
+    } if (box22.innerHTML !== "" && box22.innerHTML === box23.innerHTML && box22.innerHTML === box24.innerHTML) {
+        selectWinnerBoxes(box22, box23, box24);
+    } if (box25.innerHTML !== "" && box25.innerHTML === box26.innerHTML && box25.innerHTML === box27.innerHTML) {
+        selectWinnerBoxes(box25, box26, box27);
+    } 
+
     // VERTICAL WINS
     // FIRST GAME
     if (box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML) {
@@ -65,6 +75,16 @@ function getWinner(){
         selectWinnerBoxes(box12, box15, box18);
     }
 
+    // VERTICAL WINS
+    // THIRD GAME
+    if (box19.innerHTML !== "" && box19.innerHTML === box22.innerHTML && box19.innerHTML === box25.innerHTML) {
+        selectWinnerBoxes(box19, box22, box25);
+    } if (box20.innerHTML !== "" && box20.innerHTML === box23.innerHTML && box20.innerHTML === box26.innerHTML) {
+        selectWinnerBoxes(box20, box23, box26);
+    } if (box21.innerHTML !== "" && box21.innerHTML === box24.innerHTML && box21.innerHTML === box27.innerHTML) {
+        selectWinnerBoxes(box21, box24, box27);
+    }
+
 
     // DIAGONAL WINS
     // FIRST GAME
@@ -80,6 +100,14 @@ function getWinner(){
         selectWinnerBoxes(box10, box14, box18);
     } if (box12.innerHTML !== "" && box12.innerHTML === box14.innerHTML && box12.innerHTML === box16.innerHTML) {
         selectWinnerBoxes(box12, box14, box16);
+    }
+
+    // DIAGONAL WINS
+    // THIRD GAME
+    if (box19.innerHTML !== "" && box19.innerHTML === box23.innerHTML && box19.innerHTML === box27.innerHTML) {
+        selectWinnerBoxes(box19, box23, box27);
+    } if (box21.innerHTML !== "" && box21.innerHTML === box23.innerHTML && box21.innerHTML === box25.innerHTML) {
+        selectWinnerBoxes(box21, box23, box25);
     }
 };
 
