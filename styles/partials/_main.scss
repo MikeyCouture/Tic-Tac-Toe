@@ -5,22 +5,29 @@ body{
     align-items: center;
 }
 
+.mainContainer{
+    width: 660px;
+    // display: flex;
+    // flex-wrap: wrap;
+}
+
 
 .container{
-    width: 300px;
+    width: 200px;
     // overflow: hidden;
-    margin: 50px auto 0 auto;
+    margin: 25px 10px 10px 10px;
+    float: left;
     .box{
         float: left;
         width: 33.33%;
-        height: 100px;
+        height: 60px;
         border: 1px solid #313167;
         color: #313167;
         font-size: 50px;
         transition: all .5s;
         text-align: center;
-        line-height: 100px;
-        transform: rotate(10deg);
+        line-height: 67px;
+        // transform: rotate(10deg);
         box-shadow: 1px 0px 0px #313167;
     }
     
@@ -28,7 +35,7 @@ body{
         background: #b66e56;
         color: #fee7a3;
         cursor: pointer;
-        transform: rotate(0deg);
+        transform: rotate(5deg);
     }
 }
 
@@ -58,7 +65,9 @@ button{
 }
 
 .fully{
-    font-size: 80px;
+    font-size: 280px;
+    text-align: center;
+    height: 230px;
 }
 
 span{
@@ -72,7 +81,7 @@ span{
     }
 
 #turn{
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 }
 
 .title{
