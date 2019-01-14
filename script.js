@@ -1,20 +1,58 @@
 let turn = document.getElementById("turn");
 let boxes = document.querySelectorAll("#main div"), X_or_O = 0;
-let full = document.querySelector("#main");
+let full = document.querySelectorAll("mainContainer container");
 let mainGuy = document.querySelector(".title");
-console.log(full);
-console.log(mainGuy);
+let conOne = box1.parentElement;
+// let conOne = document.querySelectorAll("box"); 
+// console.log(full);
+// console.log(conOne);
 
 function selectWinnerBoxes(b1, b2, b3){
     b1.classList.add("win");
     b2.classList.add("win");
     b3.classList.add("win"); 
     turn.innerHTML = b1.innerHTML + " Won, Congrats!"
-    // fuller = full.innerHTML = b1.innerHTML;
+    // this.fuller = full.innerHTML = b1.innerHTML;
     // full.classList.add("fully");
+    // if(b1 === b2 && b1 === b3){
+    //     conOne.classList.add("ultimateTest");
+    // }
+    let conOne = b1.parentElement;
+    conOne.classList.add("ultimateTest");
 };
 
+// function ultimateWin(){
+//     if (box1 === X_or_O){
+//         conOne.classList.add("ultimateTest");
+//     }
+
+//     let conTwo = box10.parentElement;
+//     conTwo.classList.add("ultimateTest");
+
+// }
+
+
+// function ultimateWin(c1, c2, c3) {
+//     c1.innerHTML.classList.add("ultimateTest");
+//     c2.innerHTML.classList.add("ultimateTest");
+//     c3.innerHTML.classList.add("ultimateTest");
+//     // console.log("YOU WIN!");
+// };
+
+// const containerOne = document.getElementsByClassName("containerOne"),
+//     containerTwo = document.getElementsByClassName("containerTwo"),
+//     containerThree = document.getElementsByClassName("containerThree");
+//     console.log(containerOne);
+
 function getWinner(){
+
+    // full.classList.add("ultimateTest");
+
+    // if (containerOne.innerHTML !== "" && containerOne.innerHTML === containerTwo.innerHTML && containerOne.innerHTML === containerThree.innerHTML) {
+    //     // ultimateWin(containerOne, containerTwo, containerThree);
+    //     console.log("YOU WINN!");
+    // };
+
     // selecting all of the boxes in the main div
     // const box1 = document.getElementById('box1'),
     //     box2 = document.getElementById('box2'),
@@ -26,25 +64,25 @@ function getWinner(){
     //     box8 = document.getElementById('box8'),
     //     box9 = document.getElementById('box9');
 
-// HORIZONTAL WINS
-// FIRST GAME
-    if (box1.innerHTML !== "" && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML){
+    // HORIZONTAL WINS
+    // FIRST GAME
+    if (box1.innerHTML !== "" && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML) {
         selectWinnerBoxes(box1, box2, box3);
-    } if (box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML){
+    } if (box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML) {
         selectWinnerBoxes(box4, box5, box6);
     } if (box7.innerHTML !== "" && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML) {
         selectWinnerBoxes(box7, box8, box9);
-    } 
+    }
 
-// HORIZONTAL WINS
-// SECOND GAME
+    // HORIZONTAL WINS
+    // SECOND GAME
     if (box10.innerHTML !== "" && box10.innerHTML === box11.innerHTML && box10.innerHTML === box12.innerHTML) {
         selectWinnerBoxes(box10, box11, box12);
     } if (box13.innerHTML !== "" && box13.innerHTML === box14.innerHTML && box13.innerHTML === box15.innerHTML) {
         selectWinnerBoxes(box13, box14, box15);
     } if (box16.innerHTML !== "" && box16.innerHTML === box17.innerHTML && box16.innerHTML === box18.innerHTML) {
         selectWinnerBoxes(box16, box17, box18);
-    } 
+    }
 
     // HORIZONTAL WINS
     // THIRD GAME
@@ -54,7 +92,7 @@ function getWinner(){
         selectWinnerBoxes(box22, box23, box24);
     } if (box25.innerHTML !== "" && box25.innerHTML === box26.innerHTML && box25.innerHTML === box27.innerHTML) {
         selectWinnerBoxes(box25, box26, box27);
-    } 
+    }
 
     // VERTICAL WINS
     // FIRST GAME
@@ -112,9 +150,11 @@ function getWinner(){
 };
 
 
+
+
 for(let i=0; i < boxes.length; i++){
     boxes[i].addEventListener("click", switcheroo);
-    console.log(boxes[i]);
+    // console.log(boxes[i]);
 }
 
 function switcheroo(){
