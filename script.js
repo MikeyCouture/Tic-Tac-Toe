@@ -15,57 +15,31 @@ function selectWinnerBoxes(b1, b2, b3){
     b2.classList.add("win");
     b3.classList.add("win"); 
     turn.innerHTML = b1.innerHTML + " Won, Congrats!"
-    // this.fuller = full.innerHTML = b1.innerHTML;
-    // full.classList.add("fully");
-    // if(b1 === b2 && b1 === b3){
-    //     conOne.classList.add("ultimateTest");
-    // }
+
     let conOne = b1.parentElement;
-    conOne.classList.add("ultimateTest");
+
+    if (b1.innerHTML === "X"){
+        conOne.classList.add("ultimateTest");
+    }else{
+        conOne.classList.add("ultimateTestTwo");
+    };
+
+    if (box1.parentElement.classList.contains("ultimateTest") && box10.parentElement.classList.contains("ultimateTest") && box19.parentElement.classList.contains("ultimateTest")) {
+        console.log("X WINS");
+    }
+
+    if (box1.parentElement.classList.contains("ultimateTestTwo") && box10.parentElement.classList.contains("ultimateTestTwo") && box19.parentElement.classList.contains("ultimateTestTwo")) {
+
+        console.log("O WINS");
+    }
+    
 };
 
-// function ultimateWin(){
-//     if (box1 === X_or_O){
-//         conOne.classList.add("ultimateTest");
-//     }
-
-//     let conTwo = box10.parentElement;
-//     conTwo.classList.add("ultimateTest");
-
-// }
 
 
-// function ultimateWin(c1, c2, c3) {
-//     c1.innerHTML.classList.add("ultimateTest");
-//     c2.innerHTML.classList.add("ultimateTest");
-//     c3.innerHTML.classList.add("ultimateTest");
-//     // console.log("YOU WIN!");
-// };
-
-// const containerOne = document.getElementsByClassName("containerOne"),
-//     containerTwo = document.getElementsByClassName("containerTwo"),
-//     containerThree = document.getElementsByClassName("containerThree");
-//     console.log(containerOne);
 
 function getWinner(){
 
-    // full.classList.add("ultimateTest");
-
-    // if (containerOne.innerHTML !== "" && containerOne.innerHTML === containerTwo.innerHTML && containerOne.innerHTML === containerThree.innerHTML) {
-    //     // ultimateWin(containerOne, containerTwo, containerThree);
-    //     console.log("YOU WINN!");
-    // };
-
-    // selecting all of the boxes in the main div
-    // const box1 = document.getElementById('box1'),
-    //     box2 = document.getElementById('box2'),
-    //     box3 = document.getElementById('box3'),
-    //     box4 = document.getElementById('box4'),
-    //     box5 = document.getElementById('box5'),
-    //     box6 = document.getElementById('box6'),
-    //     box7 = document.getElementById('box7'),
-    //     box8 = document.getElementById('box8'),
-    //     box9 = document.getElementById('box9');
 
     // HORIZONTAL WINS
     // FIRST GAME
@@ -97,6 +71,16 @@ function getWinner(){
         selectWinnerBoxes(box25, box26, box27);
     }
 
+    // HORIZONTAL WINS
+    // FOURTH GAME
+    if (box28.innerHTML !== "" && box28.innerHTML === box29.innerHTML && box28.innerHTML === box30.innerHTML) {
+        selectWinnerBoxes(box28, box29, box30);
+    } if (box31.innerHTML !== "" && box31.innerHTML === box32.innerHTML && box31.innerHTML === box33.innerHTML) {
+        selectWinnerBoxes(box31, box32, box33);
+    } if (box34.innerHTML !== "" && box34.innerHTML === box35.innerHTML && box34.innerHTML === box36.innerHTML) {
+        selectWinnerBoxes(box34, box35, box36);
+    }
+
     // VERTICAL WINS
     // FIRST GAME
     if (box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML) {
@@ -126,6 +110,16 @@ function getWinner(){
         selectWinnerBoxes(box21, box24, box27);
     }
 
+    // VERTICAL WINS
+    // FOURTH GAME
+    if (box28.innerHTML !== "" && box28.innerHTML === box31.innerHTML && box28.innerHTML === box34.innerHTML) {
+        selectWinnerBoxes(box28, box31, box34);
+    } if (box29.innerHTML !== "" && box29.innerHTML === box32.innerHTML && box29.innerHTML === box35.innerHTML) {
+        selectWinnerBoxes(box29, box32, box35);
+    } if (box30.innerHTML !== "" && box30.innerHTML === box33.innerHTML && box30.innerHTML === box36.innerHTML) {
+        selectWinnerBoxes(box30, box33, box36);
+    }
+
 
     // DIAGONAL WINS
     // FIRST GAME
@@ -149,6 +143,14 @@ function getWinner(){
         selectWinnerBoxes(box19, box23, box27);
     } if (box21.innerHTML !== "" && box21.innerHTML === box23.innerHTML && box21.innerHTML === box25.innerHTML) {
         selectWinnerBoxes(box21, box23, box25);
+    }
+
+    // DIAGONAL WINS
+    // FOURTH GAME
+    if (box28.innerHTML !== "" && box28.innerHTML === box32.innerHTML && box28.innerHTML === box36.innerHTML) {
+        selectWinnerBoxes(box28, box32, box36);
+    } if (box30.innerHTML !== "" && box30.innerHTML === box32.innerHTML && box30.innerHTML === box34.innerHTML) {
+        selectWinnerBoxes(box30, box32, box34);
     }
 };
 
@@ -194,7 +196,7 @@ function shadow(e){
     const xWalk = Math.round((x / width * walk) - (walk / 2));
     const yWalk = Math.round((y / height * walk) - (walk / 2));
 
-    console.log(xWalk, yWalk);
+    // console.log(xWalk, yWalk);
 
     text.style.textShadow = `${xWalk}px ${yWalk}px 0 #b66e56, ${xWalk * -1}px ${yWalk}px 0 #313167`;
 
