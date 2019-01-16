@@ -81,6 +81,16 @@ function getWinner(){
         selectWinnerBoxes(box34, box35, box36);
     }
 
+    // HORIZONTAL WINS
+    // FIFTH GAME
+    if (box37.innerHTML !== "" && box37.innerHTML === box38.innerHTML && box37.innerHTML === box39.innerHTML) {
+        selectWinnerBoxes(box37, box38, box39);
+    } if (box40.innerHTML !== "" && box40.innerHTML === box41.innerHTML && box40.innerHTML === box42.innerHTML) {
+        selectWinnerBoxes(box40, box41, box42);
+    } if (box43.innerHTML !== "" && box43.innerHTML === box44.innerHTML && box43.innerHTML === box45.innerHTML) {
+        selectWinnerBoxes(box43, box44, box45);
+    }
+
     // VERTICAL WINS
     // FIRST GAME
     if (box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML) {
@@ -120,6 +130,16 @@ function getWinner(){
         selectWinnerBoxes(box30, box33, box36);
     }
 
+    // VERTICAL WINS
+    // FIFTH GAME
+    if (box37.innerHTML !== "" && box37.innerHTML === box40.innerHTML && box37.innerHTML === box43.innerHTML) {
+        selectWinnerBoxes(box37, box40, box43);
+    } if (box38.innerHTML !== "" && box38.innerHTML === box41.innerHTML && box38.innerHTML === box44.innerHTML) {
+        selectWinnerBoxes(box38, box41, box44);
+    } if (box39.innerHTML !== "" && box39.innerHTML === box42.innerHTML && box39.innerHTML === box45.innerHTML) {
+        selectWinnerBoxes(box39, box42, box45);
+    }
+
 
     // DIAGONAL WINS
     // FIRST GAME
@@ -151,6 +171,14 @@ function getWinner(){
         selectWinnerBoxes(box28, box32, box36);
     } if (box30.innerHTML !== "" && box30.innerHTML === box32.innerHTML && box30.innerHTML === box34.innerHTML) {
         selectWinnerBoxes(box30, box32, box34);
+    }
+
+    // DIAGONAL WINS
+    // FIFTH GAME
+    if (box37.innerHTML !== "" && box37.innerHTML === box41.innerHTML && box37.innerHTML === box45.innerHTML) {
+        selectWinnerBoxes(box37, box41, box45);
+    } if (box39.innerHTML !== "" && box39.innerHTML === box41.innerHTML && box39.innerHTML === box43.innerHTML) {
+        selectWinnerBoxes(box39, box41, box43);
     }
 };
 

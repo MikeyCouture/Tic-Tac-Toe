@@ -143,27 +143,29 @@ body {
   flex-direction: column;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  margin-top: 50px; }
 
 .mainContainer {
-  width: 660px; }
+  width: 100%;
+  max-width: 510px; }
 
 .container {
-  width: 200px;
-  margin: 25px 10px 10px 10px;
+  width: calc(33.33% - 10px);
+  margin: 5px;
   float: left; }
   .container .box {
     float: left;
     width: 33.33%;
-    height: 60px;
+    height: 40px;
     border: 1px solid #313167;
     color: #313167;
-    font-size: 50px;
+    font-size: 30px;
     -webkit-transition: all .5s;
     -o-transition: all .5s;
     transition: all .5s;
     text-align: center;
-    line-height: 67px;
+    line-height: 45px;
     -webkit-box-shadow: 1px 0px 0px #313167;
     box-shadow: 1px 0px 0px #313167; }
   .container .box:hover {
@@ -175,7 +177,7 @@ body {
     transform: rotate(5deg); }
 
 button {
-  margin-top: 100px;
+  margin-top: 50px;
   width: 20%;
   background: #fee7a3;
   border: none;
