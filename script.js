@@ -3,6 +3,9 @@ let boxes = document.querySelectorAll("#main div"), X_or_O = 0;
 let full = document.querySelectorAll("mainContainer container");
 let mainGuy = document.querySelector(".title");
 let conOne = box1.parentElement;
+const body = document.querySelector("body");
+const text = document.querySelector(".title");
+const walk = 10;
 // let conOne = document.querySelectorAll("box"); 
 // console.log(full);
 // console.log(conOne);
@@ -176,8 +179,30 @@ function switcheroo(){
     }
 }
 
+function shadow(e){
+    // console.log(e);
+    const { offsetWidth: width, offsetHeight: height } = body;
+    let x = e.offsetX;
+    let y = e.offsetY;
+    
+    if (this !== e.target) {
+        x = x + e.target.offsetLeft;
+        y = y + e.target.offsetTop;
+    }
+    // console.log(x, y);
+
+    const xWalk = Math.round((x / width * walk) - (walk / 2));
+    const yWalk = Math.round((y / height * walk) - (walk / 2));
+
+    console.log(xWalk, yWalk);
+
+    text.style.textShadow = `${xWalk}px ${yWalk}px 0 #b66e56, ${xWalk * -1}px ${yWalk}px 0 #313167`;
+
+}
+
 const newGame = document.querySelector("button");
 newGame.addEventListener("click", replay);
+body.addEventListener("mousemove", shadow);
 
 function replay(){
     window.location.reload();
