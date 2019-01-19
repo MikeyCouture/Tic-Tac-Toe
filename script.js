@@ -10,6 +10,8 @@ const walk = 10;
 // console.log(full);
 // console.log(conOne);
 
+
+// passing the three winning boxes into this function
 function selectWinnerBoxes(b1, b2, b3){
     b1.classList.add("win");
     b2.classList.add("win");
@@ -18,12 +20,17 @@ function selectWinnerBoxes(b1, b2, b3){
 
     let conOne = b1.parentElement;
 
+    // adding a specific colour to the background if X or O wins
     if (b1.innerHTML === "X"){
         conOne.classList.add("ultimateTest");
     }else{
         conOne.classList.add("ultimateTestTwo");
     };
 
+    // If three main boxes have the same colour (aka same game winner), then that user wins!
+
+    // HORIZONTAL WINS
+    // FIRST ROW
     if (box1.parentElement.classList.contains("ultimateTest") && box10.parentElement.classList.contains("ultimateTest") && box19.parentElement.classList.contains("ultimateTest")) {
         console.log("X WINS");
     }
@@ -32,14 +39,24 @@ function selectWinnerBoxes(b1, b2, b3){
 
         console.log("O WINS");
     }
+
+    // HORIZONTAL WINS
+    // SECOND ROW
+    if (box28.parentElement.classList.contains("ultimateTest") && box37.parentElement.classList.contains("ultimateTest") && box46.parentElement.classList.contains("ultimateTest")) {
+        console.log("X WINS");
+    }
+
+    if (box28.parentElement.classList.contains("ultimateTestTwo") && box37.parentElement.classList.contains("ultimateTestTwo") && box46.parentElement.classList.contains("ultimateTestTwo")) {
+
+        console.log("O WINS");
+    }
     
 };
 
 
 
-
+// Hard coded all winning combinations
 function getWinner(){
-
 
     // HORIZONTAL WINS
     // FIRST GAME
@@ -91,6 +108,36 @@ function getWinner(){
         selectWinnerBoxes(box43, box44, box45);
     }
 
+    // HORIZONTAL WINS
+    // SIXTH GAME
+    if (box46.innerHTML !== "" && box46.innerHTML === box47.innerHTML && box46.innerHTML === box48.innerHTML) {
+        selectWinnerBoxes(box46, box47, box48);
+    } if (box49.innerHTML !== "" && box49.innerHTML === box50.innerHTML && box49.innerHTML === box51.innerHTML) {
+        selectWinnerBoxes(box49, box50, box51);
+    } if (box52.innerHTML !== "" && box52.innerHTML === box53.innerHTML && box52.innerHTML === box54.innerHTML) {
+        selectWinnerBoxes(box52, box53, box54);
+    }
+
+    // HORIZONTAL WINS
+    // SEVENTH GAME
+    if (box55.innerHTML !== "" && box55.innerHTML === box56.innerHTML && box55.innerHTML === box57.innerHTML) {
+        selectWinnerBoxes(box55, box56, box57);
+    } if (box58.innerHTML !== "" && box58.innerHTML === box59.innerHTML && box58.innerHTML === box60.innerHTML) {
+        selectWinnerBoxes(box58, box59, box60);
+    } if (box61.innerHTML !== "" && box61.innerHTML === box62.innerHTML && box61.innerHTML === box63.innerHTML) {
+        selectWinnerBoxes(box61, box62, box63);
+    }
+
+    // HORIZONTAL WINS
+    // EIGHTH GAME
+    if (box64.innerHTML !== "" && box64.innerHTML === box65.innerHTML && box64.innerHTML === box66.innerHTML) {
+        selectWinnerBoxes(box64, box65, box66);
+    } if (box67.innerHTML !== "" && box67.innerHTML === box68.innerHTML && box67.innerHTML === box69.innerHTML) {
+        selectWinnerBoxes(box67, box68, box69);
+    } if (box70.innerHTML !== "" && box70.innerHTML === box71.innerHTML && box70.innerHTML === box72.innerHTML) {
+        selectWinnerBoxes(box70, box71, box72);
+    }
+
     // VERTICAL WINS
     // FIRST GAME
     if (box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML) {
@@ -140,6 +187,26 @@ function getWinner(){
         selectWinnerBoxes(box39, box42, box45);
     }
 
+    // VERTICAL WINS
+    // SIXTH GAME
+    if (box46.innerHTML !== "" && box46.innerHTML === box49.innerHTML && box46.innerHTML === box52.innerHTML) {
+        selectWinnerBoxes(box46, box49, box52);
+    } if (box47.innerHTML !== "" && box47.innerHTML === box50.innerHTML && box47.innerHTML === box53.innerHTML) {
+        selectWinnerBoxes(box47, box50, box53);
+    } if (box48.innerHTML !== "" && box48.innerHTML === box51.innerHTML && box48.innerHTML === box54.innerHTML) {
+        selectWinnerBoxes(box48, box51, box54);
+    }
+
+    // VERTICAL WINS
+    // SEVENTH GAME
+    if (box55.innerHTML !== "" && box55.innerHTML === box58.innerHTML && box55.innerHTML === box61.innerHTML) {
+        selectWinnerBoxes(box55, box58, box61);
+    } if (box56.innerHTML !== "" && box56.innerHTML === box59.innerHTML && box56.innerHTML === box62.innerHTML) {
+        selectWinnerBoxes(box56, box59, box62);
+    } if (box57.innerHTML !== "" && box57.innerHTML === box60.innerHTML && box57.innerHTML === box63.innerHTML) {
+        selectWinnerBoxes(box57, box60, box63);
+    }
+
 
     // DIAGONAL WINS
     // FIRST GAME
@@ -180,16 +247,33 @@ function getWinner(){
     } if (box39.innerHTML !== "" && box39.innerHTML === box41.innerHTML && box39.innerHTML === box43.innerHTML) {
         selectWinnerBoxes(box39, box41, box43);
     }
+
+    // DIAGONAL WINS
+    // SIXTH GAME
+    if (box46.innerHTML !== "" && box46.innerHTML === box50.innerHTML && box46.innerHTML === box54.innerHTML) {
+        selectWinnerBoxes(box46, box50, box54);
+    } if (box48.innerHTML !== "" && box48.innerHTML === box50.innerHTML && box48.innerHTML === box52.innerHTML) {
+        selectWinnerBoxes(box48, box50, box52);
+    }
+
+    // DIAGONAL WINS
+    // SEVENTH GAME
+    if (box55.innerHTML !== "" && box55.innerHTML === box59.innerHTML && box55.innerHTML === box63.innerHTML) {
+        selectWinnerBoxes(box55, box59, box63);
+    } if (box57.innerHTML !== "" && box57.innerHTML === box59.innerHTML && box57.innerHTML === box61.innerHTML) {
+        selectWinnerBoxes(box57, box59, box61);
+    }
 };
 
 
 
-
+// listening for a click on any indivdual box, then runs switcheroo function
 for(let i=0; i < boxes.length; i++){
     boxes[i].addEventListener("click", switcheroo);
     // console.log(boxes[i]);
 }
 
+// this function switches between X & O whenever clicked
 function switcheroo(){
     if(this.innerHTML !== "X" && this.innerHTML !== "O"){
 
@@ -209,6 +293,7 @@ function switcheroo(){
     }
 }
 
+// style function - background shadow on the title will follow the mouse on mousemove
 function shadow(e){
     // console.log(e);
     const { offsetWidth: width, offsetHeight: height } = body;
@@ -230,6 +315,7 @@ function shadow(e){
 
 }
 
+// reset button
 const newGame = document.querySelector("button");
 newGame.addEventListener("click", replay);
 body.addEventListener("mousemove", shadow);
