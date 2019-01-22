@@ -6,9 +6,15 @@ let conOne = box1.parentElement;
 const body = document.querySelector("body");
 const text = document.querySelector(".title");
 const walk = 20;
-// let conOne = document.querySelectorAll("box"); 
-// console.log(full);
-// console.log(conOne);
+const newGame = document.querySelector("button");
+newGame.addEventListener("click", replay);
+body.addEventListener("mousemove", shadow);
+const rules = document.querySelector(".fa-question-circle");
+rules.addEventListener("click", gameRules);
+const gameInfoDisplay = document.querySelector(".gameInfo");
+const faCircle = document.querySelector(".fa-circle");
+const faTimes = document.querySelector(".fa-times");
+faCircle && faTimes.addEventListener("click", gameRules);
 
 
 // passing the three winning boxes into this function
@@ -16,7 +22,6 @@ function selectWinnerBoxes(b1, b2, b3){
     b1.classList.add("win");
     b2.classList.add("win");
     b3.classList.add("win"); 
-    turn.innerHTML = b1.innerHTML + " Won, Congrats!"
 
     let conOne = b1.parentElement;
 
@@ -37,6 +42,10 @@ function selectWinnerBoxes(b1, b2, b3){
         }, 500);
     };
 
+    function winWin() {
+        turn.innerHTML = b1.innerHTML + " Won, Congrats!"
+    };
+
     // If three main boxes have the same colour (aka same game winner), then that user wins!
 
     // HORIZONTAL WINS
@@ -44,13 +53,14 @@ function selectWinnerBoxes(b1, b2, b3){
     if (box1.parentElement.classList.contains("ultimateTest") && box10.parentElement.classList.contains("ultimateTest") && box19.parentElement.classList.contains("ultimateTest")) {
         console.log("X WINS");
         timer();
-
+        winWin();
     }
 
     if (box1.parentElement.classList.contains("ultimateTestTwo") && box10.parentElement.classList.contains("ultimateTestTwo") && box19.parentElement.classList.contains("ultimateTestTwo")) {
 
         console.log("O WINS");
         timer();
+        winWin();
     }
 
     // HORIZONTAL WINS
@@ -58,12 +68,14 @@ function selectWinnerBoxes(b1, b2, b3){
     if (box28.parentElement.classList.contains("ultimateTest") && box37.parentElement.classList.contains("ultimateTest") && box46.parentElement.classList.contains("ultimateTest")) {
         console.log("X WINS");
         timer();
+        winWin();
     }
 
     if (box28.parentElement.classList.contains("ultimateTestTwo") && box37.parentElement.classList.contains("ultimateTestTwo") && box46.parentElement.classList.contains("ultimateTestTwo")) {
 
         console.log("O WINS");
         timer();
+        winWin();
     }
 
     // HORIZONTAL WINS
@@ -71,12 +83,14 @@ function selectWinnerBoxes(b1, b2, b3){
     if (box55.parentElement.classList.contains("ultimateTest") && box64.parentElement.classList.contains("ultimateTest") && box73.parentElement.classList.contains("ultimateTest")) {
         console.log("X WINS");
         timer();
+        winWin();
     }
 
     if (box55.parentElement.classList.contains("ultimateTestTwo") && box64.parentElement.classList.contains("ultimateTestTwo") && box73.parentElement.classList.contains("ultimateTestTwo")) {
 
         console.log("O WINS");
-        timer();timer();
+        timer();
+        winWin();
     }
 
     // HORIZONTAL WINS ABOVE
@@ -86,13 +100,15 @@ function selectWinnerBoxes(b1, b2, b3){
     // FIRST COLUMN
     if (box1.parentElement.classList.contains("ultimateTest") && box28.parentElement.classList.contains("ultimateTest") && box55.parentElement.classList.contains("ultimateTest")) {
         console.log("X WINS");
-        timer();timer();
+        timer()
+        winWin();
     }
 
     if (box1.parentElement.classList.contains("ultimateTestTwo") && box28.parentElement.classList.contains("ultimateTestTwo") && box55.parentElement.classList.contains("ultimateTestTwo")) {
 
         console.log("O WINS");
         timer();
+        winWin();
     }
 
     // VERTICAL WINS
@@ -100,12 +116,14 @@ function selectWinnerBoxes(b1, b2, b3){
     if (box10.parentElement.classList.contains("ultimateTest") && box37.parentElement.classList.contains("ultimateTest") && box64.parentElement.classList.contains("ultimateTest")) {
         console.log("X WINS");
         timer();
+        winWin();
     }
 
     if (box10.parentElement.classList.contains("ultimateTestTwo") && box37.parentElement.classList.contains("ultimateTestTwo") && box64.parentElement.classList.contains("ultimateTestTwo")) {
 
         console.log("O WINS");
         timer();
+        winWin();
     }
 
     // VERTICAL WINS
@@ -113,12 +131,14 @@ function selectWinnerBoxes(b1, b2, b3){
     if (box19.parentElement.classList.contains("ultimateTest") && box46.parentElement.classList.contains("ultimateTest") && box73.parentElement.classList.contains("ultimateTest")) {
         console.log("X WINS");
         timer();
+        winWin();
     }
 
     if (box19.parentElement.classList.contains("ultimateTestTwo") && box46.parentElement.classList.contains("ultimateTestTwo") && box73.parentElement.classList.contains("ultimateTestTwo")) {
 
         console.log("O WINS");
         timer();
+        winWin();
     }
 
     // VERTICAL WINS ABOVE
@@ -127,22 +147,26 @@ function selectWinnerBoxes(b1, b2, b3){
     if (box1.parentElement.classList.contains("ultimateTest") && box37.parentElement.classList.contains("ultimateTest") && box73.parentElement.classList.contains("ultimateTest")) {
         console.log("X WINS");
         timer();
+        winWin();
     }
 
     if (box1.parentElement.classList.contains("ultimateTestTwo") && box37.parentElement.classList.contains("ultimateTestTwo") && box73.parentElement.classList.contains("ultimateTestTwo")) {
 
         console.log("O WINS");
         timer();
+        winWin();
     }
 
     if (box19.parentElement.classList.contains("ultimateTest") && box37.parentElement.classList.contains("ultimateTest") && box55.parentElement.classList.contains("ultimateTest")) {
         console.log("X WINS");
         timer();
+        winWin();
     }
 
     if (box19.parentElement.classList.contains("ultimateTestTwo") && box37.parentElement.classList.contains("ultimateTestTwo") && box55.parentElement.classList.contains("ultimateTestTwo")) {
         console.log("O WINS");
         timer();
+        winWin();
     }
 };
 
@@ -416,7 +440,7 @@ function getWinner(){
 for(let i=0; i < boxes.length; i++){
     boxes[i].addEventListener("click", switcheroo);
     // console.log(boxes[i]);
-}
+};
 
 // this function switches between X & O whenever clicked
 function switcheroo(){
@@ -435,12 +459,11 @@ function switcheroo(){
             getWinner();
             X_or_O += 1;
         };
-    }
-}
+    };
+};
 
 // style function - background shadow on the title will follow the mouse on mousemove
 function shadow(e){
-    // console.log(e);
     const { offsetWidth: width, offsetHeight: height } = body;
     let x = e.offsetX;
     let y = e.offsetY;
@@ -448,28 +471,20 @@ function shadow(e){
     if (this !== e.target) {
         x = x + e.target.offsetLeft;
         y = y + e.target.offsetTop;
-    }
-    // console.log(x, y);
+    };
 
     const xWalk = Math.round((x / width * walk) - (walk / 2));
     const yWalk = Math.round((y / height * walk) - (walk / 2));
-
-    // console.log(xWalk, yWalk);
-
-    text.style.textShadow = `${xWalk}px ${yWalk}px 0 #b66e56, ${xWalk * -1}px ${yWalk}px 0 #313167`;
+    text.style.textShadow = `${xWalk}px ${yWalk}px 0 #cfcb9c, ${xWalk * -1}px ${yWalk}px 0 #313167`;
 };
 
-
 // reset button
-const newGame = document.querySelector("button");
-newGame.addEventListener("click", replay);
-body.addEventListener("mousemove", shadow);
-
 function replay(){
     window.location.reload();
 }
 
-// anime({
-//     targets: mainGuy,
-   
-// });
+function gameRules(){
+    gameInfoDisplay.classList.toggle("gameInfoShow");
+};
+
+
