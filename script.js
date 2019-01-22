@@ -5,7 +5,7 @@ let mainGuy = document.querySelector(".title");
 let conOne = box1.parentElement;
 const body = document.querySelector("body");
 const text = document.querySelector(".title");
-const walk = 10;
+const walk = 20;
 // let conOne = document.querySelectorAll("box"); 
 // console.log(full);
 // console.log(conOne);
@@ -27,30 +27,123 @@ function selectWinnerBoxes(b1, b2, b3){
         conOne.classList.add("ultimateTestTwo");
     };
 
+    function timer() {
+        setTimeout(() => {
+            swal({
+                title: turn.innerHTML = b1.innerHTML + " Won, Congrats!",
+                icon: "success",
+                button: "Fun Times",
+            });
+        }, 500);
+    };
+
     // If three main boxes have the same colour (aka same game winner), then that user wins!
 
     // HORIZONTAL WINS
     // FIRST ROW
     if (box1.parentElement.classList.contains("ultimateTest") && box10.parentElement.classList.contains("ultimateTest") && box19.parentElement.classList.contains("ultimateTest")) {
         console.log("X WINS");
+        timer();
+
     }
 
     if (box1.parentElement.classList.contains("ultimateTestTwo") && box10.parentElement.classList.contains("ultimateTestTwo") && box19.parentElement.classList.contains("ultimateTestTwo")) {
 
         console.log("O WINS");
+        timer();
     }
 
     // HORIZONTAL WINS
     // SECOND ROW
     if (box28.parentElement.classList.contains("ultimateTest") && box37.parentElement.classList.contains("ultimateTest") && box46.parentElement.classList.contains("ultimateTest")) {
         console.log("X WINS");
+        timer();
     }
 
     if (box28.parentElement.classList.contains("ultimateTestTwo") && box37.parentElement.classList.contains("ultimateTestTwo") && box46.parentElement.classList.contains("ultimateTestTwo")) {
 
         console.log("O WINS");
+        timer();
     }
-    
+
+    // HORIZONTAL WINS
+    // THIRD ROW
+    if (box55.parentElement.classList.contains("ultimateTest") && box64.parentElement.classList.contains("ultimateTest") && box73.parentElement.classList.contains("ultimateTest")) {
+        console.log("X WINS");
+        timer();
+    }
+
+    if (box55.parentElement.classList.contains("ultimateTestTwo") && box64.parentElement.classList.contains("ultimateTestTwo") && box73.parentElement.classList.contains("ultimateTestTwo")) {
+
+        console.log("O WINS");
+        timer();timer();
+    }
+
+    // HORIZONTAL WINS ABOVE
+    // VERTICAL WINS BELOW
+
+    // VERTICAL WINS
+    // FIRST COLUMN
+    if (box1.parentElement.classList.contains("ultimateTest") && box28.parentElement.classList.contains("ultimateTest") && box55.parentElement.classList.contains("ultimateTest")) {
+        console.log("X WINS");
+        timer();timer();
+    }
+
+    if (box1.parentElement.classList.contains("ultimateTestTwo") && box28.parentElement.classList.contains("ultimateTestTwo") && box55.parentElement.classList.contains("ultimateTestTwo")) {
+
+        console.log("O WINS");
+        timer();
+    }
+
+    // VERTICAL WINS
+    // SECOND COLUMN
+    if (box10.parentElement.classList.contains("ultimateTest") && box37.parentElement.classList.contains("ultimateTest") && box64.parentElement.classList.contains("ultimateTest")) {
+        console.log("X WINS");
+        timer();
+    }
+
+    if (box10.parentElement.classList.contains("ultimateTestTwo") && box37.parentElement.classList.contains("ultimateTestTwo") && box64.parentElement.classList.contains("ultimateTestTwo")) {
+
+        console.log("O WINS");
+        timer();
+    }
+
+    // VERTICAL WINS
+    // THIRD COLUMN
+    if (box19.parentElement.classList.contains("ultimateTest") && box46.parentElement.classList.contains("ultimateTest") && box73.parentElement.classList.contains("ultimateTest")) {
+        console.log("X WINS");
+        timer();
+    }
+
+    if (box19.parentElement.classList.contains("ultimateTestTwo") && box46.parentElement.classList.contains("ultimateTestTwo") && box73.parentElement.classList.contains("ultimateTestTwo")) {
+
+        console.log("O WINS");
+        timer();
+    }
+
+    // VERTICAL WINS ABOVE
+    // DIAGONAL WINS BELOW
+
+    if (box1.parentElement.classList.contains("ultimateTest") && box37.parentElement.classList.contains("ultimateTest") && box73.parentElement.classList.contains("ultimateTest")) {
+        console.log("X WINS");
+        timer();
+    }
+
+    if (box1.parentElement.classList.contains("ultimateTestTwo") && box37.parentElement.classList.contains("ultimateTestTwo") && box73.parentElement.classList.contains("ultimateTestTwo")) {
+
+        console.log("O WINS");
+        timer();
+    }
+
+    if (box19.parentElement.classList.contains("ultimateTest") && box37.parentElement.classList.contains("ultimateTest") && box55.parentElement.classList.contains("ultimateTest")) {
+        console.log("X WINS");
+        timer();
+    }
+
+    if (box19.parentElement.classList.contains("ultimateTestTwo") && box37.parentElement.classList.contains("ultimateTestTwo") && box55.parentElement.classList.contains("ultimateTestTwo")) {
+        console.log("O WINS");
+        timer();
+    }
 };
 
 
@@ -138,6 +231,19 @@ function getWinner(){
         selectWinnerBoxes(box70, box71, box72);
     }
 
+    // HORIZONTAL WINS
+    // NINTH GAME
+    if (box73.innerHTML !== "" && box73.innerHTML === box74.innerHTML && box73.innerHTML === box75.innerHTML) {
+        selectWinnerBoxes(box73, box74, box75);
+    } if (box76.innerHTML !== "" && box76.innerHTML === box77.innerHTML && box76.innerHTML === box78.innerHTML) {
+        selectWinnerBoxes(box76, box77, box78);
+    } if (box79.innerHTML !== "" && box79.innerHTML === box80.innerHTML && box79.innerHTML === box81.innerHTML) {
+        selectWinnerBoxes(box79, box80, box81);
+    }
+
+    // HORIZONTAL WINS ABOVE
+    // VERTICAL WINS BELOW
+
     // VERTICAL WINS
     // FIRST GAME
     if (box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML) {
@@ -207,6 +313,28 @@ function getWinner(){
         selectWinnerBoxes(box57, box60, box63);
     }
 
+    // VERTICAL WINS
+    // EIGHTH GAME
+    if (box64.innerHTML !== "" && box64.innerHTML === box67.innerHTML && box64.innerHTML === box70.innerHTML) {
+        selectWinnerBoxes(box64, box67, box70);
+    } if (box65.innerHTML !== "" && box65.innerHTML === box68.innerHTML && box65.innerHTML === box71.innerHTML) {
+        selectWinnerBoxes(box65, box68, box71);
+    } if (box66.innerHTML !== "" && box66.innerHTML === box69.innerHTML && box66.innerHTML === box72.innerHTML) {
+        selectWinnerBoxes(box66, box69, box72);
+    }
+
+    // VERTICAL WINS
+    // NINTH GAME
+    if (box73.innerHTML !== "" && box73.innerHTML === box76.innerHTML && box73.innerHTML === box79.innerHTML) {
+        selectWinnerBoxes(box73, box76, box79);
+    } if (box74.innerHTML !== "" && box74.innerHTML === box77.innerHTML && box74.innerHTML === box80.innerHTML) {
+        selectWinnerBoxes(box74, box77, box80);
+    } if (box75.innerHTML !== "" && box75.innerHTML === box78.innerHTML && box75.innerHTML === box81.innerHTML) {
+        selectWinnerBoxes(box75, box78, box81);
+    }
+
+    // VERTICAL WINS ABOVE
+    // DIAGONAL WINS BELOW
 
     // DIAGONAL WINS
     // FIRST GAME
@@ -263,6 +391,23 @@ function getWinner(){
     } if (box57.innerHTML !== "" && box57.innerHTML === box59.innerHTML && box57.innerHTML === box61.innerHTML) {
         selectWinnerBoxes(box57, box59, box61);
     }
+
+    // DIAGONAL WINS
+    // EIGHTH GAME
+    if (box64.innerHTML !== "" && box64.innerHTML === box68.innerHTML && box64.innerHTML === box72.innerHTML) {
+        selectWinnerBoxes(box64, box68, box72);
+    } if (box66.innerHTML !== "" && box66.innerHTML === box68.innerHTML && box66.innerHTML === box70.innerHTML) {
+        selectWinnerBoxes(box66, box68, box70);
+    }
+
+    // DIAGONAL WINS
+    // NINTH GAME
+    if (box73.innerHTML !== "" && box73.innerHTML === box77.innerHTML && box73.innerHTML === box81.innerHTML) {
+        selectWinnerBoxes(box73, box77, box81);
+    } if (box75.innerHTML !== "" && box75.innerHTML === box77.innerHTML && box75.innerHTML === box79.innerHTML) {
+        selectWinnerBoxes(box75, box77, box79);
+    }
+
 };
 
 
@@ -312,8 +457,8 @@ function shadow(e){
     // console.log(xWalk, yWalk);
 
     text.style.textShadow = `${xWalk}px ${yWalk}px 0 #b66e56, ${xWalk * -1}px ${yWalk}px 0 #313167`;
+};
 
-}
 
 // reset button
 const newGame = document.querySelector("button");
