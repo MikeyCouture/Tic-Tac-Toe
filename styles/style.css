@@ -213,11 +213,13 @@ span {
   color: #313167; }
 
 #turn {
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  font-family: 'Indie Flower'; }
 
 .title {
   font-size: 40px;
-  font-weight: bold; }
+  font-weight: bold;
+  font-family: 'Indie Flower'; }
 
 .ultimateTest {
   background: #cb654f; }
@@ -256,15 +258,21 @@ span {
   border-radius: 10px;
   border: 2px solid orange;
   line-height: 25px;
-  display: none; }
+  display: none;
+  font-family: 'Indie Flower'; }
 
 .gameInfoShow {
   display: block; }
 
 .fa-circle {
   position: absolute;
-  right: 320px; }
+  right: 320px;
+  cursor: pointer;
+  font-weight: normal;
+  color: #8cbea3; }
 
 .fa-times {
   position: absolute;
-  left: 320px; }
+  left: 320px;
+  cursor: pointer;
+  color: #8cbea3; }

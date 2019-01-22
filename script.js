@@ -12,10 +12,10 @@ body.addEventListener("mousemove", shadow);
 const rules = document.querySelector(".fa-question-circle");
 rules.addEventListener("click", gameRules);
 const gameInfoDisplay = document.querySelector(".gameInfo");
-const faCircle = document.querySelector(".fa-circle");
-const faTimes = document.querySelector(".fa-times");
-faCircle && faTimes.addEventListener("click", gameRules);
-
+// const faCircle = document.querySelector(".fa-circle");
+// const faTimes = document.querySelector(".fa-times");
+// faCircle && faTimes.addEventListener("click", gameRules);
+let closingIcon = document.querySelectorAll(".fas");
 
 // passing the three winning boxes into this function
 function selectWinnerBoxes(b1, b2, b3){
@@ -475,7 +475,7 @@ function shadow(e){
 
     const xWalk = Math.round((x / width * walk) - (walk / 2));
     const yWalk = Math.round((y / height * walk) - (walk / 2));
-    text.style.textShadow = `${xWalk}px ${yWalk}px 0 #cfcb9c, ${xWalk * -1}px ${yWalk}px 0 #313167`;
+    text.style.textShadow = `${xWalk}px ${yWalk}px 0 #cfcb9c, ${xWalk * 1}px ${yWalk}px 0 #313167`;
 };
 
 // reset button
@@ -483,8 +483,10 @@ function replay(){
     window.location.reload();
 }
 
+closingIcon.forEach(function (item){
+    item.addEventListener("click", gameRules);
+});
+
 function gameRules(){
     gameInfoDisplay.classList.toggle("gameInfoShow");
 };
-
-
