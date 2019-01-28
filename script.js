@@ -1,36 +1,61 @@
 let turn = document.getElementById("turn");
 let boxes = document.querySelectorAll("#main div"), X_or_O = 0;
 let full = document.querySelectorAll("mainContainer container");
-let mainGuy = document.querySelector(".title");
-let conOne = box1.parentElement;
+let container = box1.parentElement;
 const body = document.querySelector("body");
-const text = document.querySelector(".title");
-const walk = 20;
 const newGame = document.querySelector("button");
+const rules = document.querySelector(".fa-question-circle");
+let closingIcon = document.querySelectorAll(".fas");
 newGame.addEventListener("click", replay);
 body.addEventListener("mousemove", shadow);
-const rules = document.querySelector(".fa-question-circle");
 rules.addEventListener("click", gameRules);
-const gameInfoDisplay = document.querySelector(".gameInfo");
-// const faCircle = document.querySelector(".fa-circle");
-// const faTimes = document.querySelector(".fa-times");
-// faCircle && faTimes.addEventListener("click", gameRules);
-let closingIcon = document.querySelectorAll(".fas");
+// let mainGuy = document.querySelector(".title");
 
 // passing the three winning boxes into this function
 function selectWinnerBoxes(b1, b2, b3){
-    b1.classList.add("win");
-    b2.classList.add("win");
-    b3.classList.add("win"); 
+    // b1.classList.add("win");
+    // b2.classList.add("win");
+    // b3.classList.add("win"); 
 
-    let conOne = b1.parentElement;
+    let container = b1.parentElement;
 
     // adding a specific colour to the background if X or O wins
+    // b1.innerHTML === "X" ? container.classList.add("ultimateTest") : container.classList.add("ultimateTestTwo");
+
     if (b1.innerHTML === "X"){
-        conOne.classList.add("ultimateTest");
-    }else{
-        conOne.classList.add("ultimateTestTwo");
-    };
+        b1.innerHTML == container.classList.add("ultimateTest");
+
+        // if (container.classList.contains("ultimateTest") == true){
+        //     console.log(empty);
+        // }
+
+        let empty = container.children;
+        
+        empty.forEach(function (item){
+            console.log(item);
+        });
+
+        // if ("X" == true) {
+        //     container.classList.add("ultimateTest");
+        // } else {
+        //     container.classList.add("ultimateTestTwo");
+        // };
+    }
+
+
+    // b1.innerHTML === "O" ? container.classList.add("ultimateTestTwo") : null;
+
+    // if (container.classList.contains("ultimateTest" || "ultimateTestTwo")){
+    //     // if(boxes.innerHTML == ""){
+    //     //     console.log(boxes);
+    //     // }
+    //     let empty = container.children;
+    //     // console.log(empty);
+    //     if(empty.innerHTML !== X_or_O){
+            
+    //     }
+    // }
+
 
     function timer() {
         setTimeout(() => {
@@ -169,7 +194,6 @@ function selectWinnerBoxes(b1, b2, b3){
         winWin();
     }
 };
-
 
 
 // Hard coded all winning combinations
@@ -437,10 +461,10 @@ function getWinner(){
 
 
 // listening for a click on any indivdual box, then runs switcheroo function
-for(let i=0; i < boxes.length; i++){
-    boxes[i].addEventListener("click", switcheroo);
-    // console.log(boxes[i]);
-};
+    for(let i=0; i < boxes.length; i++){
+        boxes[i].addEventListener("click", switcheroo);
+        // console.log(boxes[i]);
+    };
 
 // this function switches between X & O whenever clicked
 function switcheroo(){
@@ -464,6 +488,8 @@ function switcheroo(){
 
 // style function - background shadow on the title will follow the mouse on mousemove
 function shadow(e){
+    const walk = 20;
+    const text = document.querySelector(".title");
     const { offsetWidth: width, offsetHeight: height } = body;
     let x = e.offsetX;
     let y = e.offsetY;
@@ -478,7 +504,7 @@ function shadow(e){
     text.style.textShadow = `${xWalk}px ${yWalk}px 0 #cfcb9c, ${xWalk * 1}px ${yWalk}px 0 #313167`;
 };
 
-// reset button
+// RESET BUTTON
 function replay(){
     window.location.reload();
 }
@@ -488,5 +514,6 @@ closingIcon.forEach(function (item){
 });
 
 function gameRules(){
+    const gameInfoDisplay = document.querySelector(".gameInfo");
     gameInfoDisplay.classList.toggle("gameInfoShow");
 };
