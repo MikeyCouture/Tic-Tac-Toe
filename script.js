@@ -17,45 +17,16 @@ function selectWinnerBoxes(b1, b2, b3){
     // b2.classList.add("win");
     // b3.classList.add("win"); 
 
+
     let container = b1.parentElement;
 
-    // adding a specific colour to the background if X or O wins
-    // b1.innerHTML === "X" ? container.classList.add("ultimateTest") : container.classList.add("ultimateTestTwo");
-
-    if (b1.innerHTML === "X"){
-        b1.innerHTML == container.classList.add("ultimateTest");
-
-        // if (container.classList.contains("ultimateTest") == true){
-        //     console.log(empty);
-        // }
-
-        let empty = container.children;
-        
-        empty.forEach(function (item){
-            console.log(item);
-        });
-
-        // if ("X" == true) {
-        //     container.classList.add("ultimateTest");
-        // } else {
-        //     container.classList.add("ultimateTestTwo");
-        // };
+    // KINDA WORKS?! 
+    if(b1.innerHTML === "X"){
+        if (!container.classList.contains("ultimateTestTwo"))
+        container.classList.add("ultimateTest");
+    } else if (!container.classList.contains("ultimateTest")) {
+        container.classList.add("ultimateTestTwo");
     }
-
-
-    // b1.innerHTML === "O" ? container.classList.add("ultimateTestTwo") : null;
-
-    // if (container.classList.contains("ultimateTest" || "ultimateTestTwo")){
-    //     // if(boxes.innerHTML == ""){
-    //     //     console.log(boxes);
-    //     // }
-    //     let empty = container.children;
-    //     // console.log(empty);
-    //     if(empty.innerHTML !== X_or_O){
-            
-    //     }
-    // }
-
 
     function timer() {
         setTimeout(() => {
