@@ -20,7 +20,7 @@ function selectWinnerBoxes(b1, b2, b3){
 
     let container = b1.parentElement;
 
-    // KINDA WORKS?! 
+    // KINDA WORKS?
     if(b1.innerHTML === "X"){
         if (!container.classList.contains("ultimateTestTwo"))
         container.classList.add("ultimateTest");
