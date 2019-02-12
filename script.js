@@ -9,14 +9,9 @@ let closingIcon = document.querySelectorAll(".fas");
 newGame.addEventListener("click", replay);
 body.addEventListener("mousemove", shadow);
 rules.addEventListener("click", gameRules);
-// let mainGuy = document.querySelector(".title");
 
 // passing the three winning boxes into this function
 function selectWinnerBoxes(b1, b2, b3){
-    // b1.classList.add("win");
-    // b2.classList.add("win");
-    // b3.classList.add("win"); 
-
 
     let container = b1.parentElement;
 
@@ -428,8 +423,6 @@ function getWinner(){
     }
 
 };
-
-
 
 // listening for a click on any indivdual box, then runs switcheroo function
     for(let i=0; i < boxes.length; i++){

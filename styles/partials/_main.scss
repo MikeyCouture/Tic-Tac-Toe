@@ -1,5 +1,5 @@
 body{
-    // background: #fee7a3;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,19 +10,17 @@ body{
 
 // FONTS
 @mixin mainFont {
-    font-family: 'Indie Flower';
-}
+    font-family: 'Indie Flower', cursive;
+};
 
 // COLORS
 $mainGreen: #8cbea3;
 $mainNavy: #313167;
 
-
 .mainContainer{
     width: 100%;
     max-width: 510px;
 };
-
 
 .container{
     width: calc(33.33% - 10px);
@@ -38,16 +36,15 @@ $mainNavy: #313167;
         transition: all .5s;
         text-align: center;
         line-height: 45px;
-        // transform: rotate(10deg);
         box-shadow: 1px 0px 0px $mainNavy;
-    }
+    };
     
     .box:hover{
         background: #cfcb9c;
         color: $mainGreen;
         cursor: pointer;
         transform: rotate(5deg);
-    }
+    };
 };
 
 button{
@@ -64,61 +61,61 @@ button{
     transition: 0.3s;
     &:hover{
         box-shadow: 1px 1px 3px black;
-    }
-}
+    };
+};
 
 .win{
     color: $mainGreen;
-}
+};
 
 .fully{
     font-size: 200px;
     text-align: center;
     height: 180px;
-}
+};
 
 span{
-        width: 100%;
-        display: block;
-        text-align: center;
-        margin-bottom: 10px;
-        font-size: 25px;
-        text-transform: uppercase;
-        color: $mainNavy;
-    }
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: $mainNavy;
+};
 
 #turn{
     margin-bottom: 30px;
     @include mainFont;
-}
+};
 
 .title{
     font-size: 40px;
     font-weight: bold;
     @include mainFont;
-}
+};
 
 .ultimateTest{
     background: #cb654f;
-}
+};
 
 .ultimateTestTwo{
     background: #dfba47;
-}
+};
 
 .swal-footer {
     text-align: center;
-}
+};
 
 .swal-button-container {
     margin: 5px;
     display: block;
     position: relative;
-}
+};
 
 .swal-button{
     width: 100px;
-}
+};
 
 .fa-question-circle{
     margin-top: 20px;
@@ -128,8 +125,8 @@ span{
     cursor: pointer;
     &:hover{
         font-size: 28px;
-    }
-}
+    };
+};
 
 .gameInfo{
     width: 350px;
@@ -145,7 +142,7 @@ span{
     line-height: 25px;
     display: none;
     @include mainFont;
-}
+};
 
 .gameInfoShow{
     display: block;
@@ -157,14 +154,14 @@ span{
     cursor: pointer;
     font-weight: normal;
     color: $mainGreen;
-}
+};
 
 .fa-times{
     position: absolute;
     left: 320px;
     cursor: pointer;
     color: $mainGreen;
-}
+};
 
 
 

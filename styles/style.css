@@ -133,6 +133,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box; }
 
 body {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -214,12 +215,12 @@ span {
 
 #turn {
   margin-bottom: 30px;
-  font-family: 'Indie Flower'; }
+  font-family: 'Indie Flower', cursive; }
 
 .title {
   font-size: 40px;
   font-weight: bold;
-  font-family: 'Indie Flower'; }
+  font-family: 'Indie Flower', cursive; }
 
 .ultimateTest {
   background: #cb654f; }
@@ -262,7 +263,7 @@ span {
   border: 2px solid #cfcb9c;
   line-height: 25px;
   display: none;
-  font-family: 'Indie Flower'; }
+  font-family: 'Indie Flower', cursive; }
 
 .gameInfoShow {
   display: block; }
