@@ -235,6 +235,9 @@ span {
   display: block;
   position: relative; }
 
+.swal-button {
+  width: 100px; }
+
 .fa-question-circle {
   margin-top: 20px;
   font-size: 25px;
@@ -256,7 +259,7 @@ span {
   top: 230px;
   padding: 10px 20px 10px 20px;
   border-radius: 10px;
-  border: 2px solid orange;
+  border: 2px solid #cfcb9c;
   line-height: 25px;
   display: none;
   font-family: 'Indie Flower'; }
